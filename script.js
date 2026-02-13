@@ -405,17 +405,25 @@ var POEM_MEMORIES = [
   var flowersShownOnce = false;
 
   function setProgress() {
-    safeText($("progressText"), (idxQ + 1) + " / " + questions.length);
+  safeText($("progressText"), (idxQ + 1) + " / " + questions.length);
 
-    var left = 3 + idxQ * 2 + (mode === "note" ? 1 : 0);
-    var right = left + 1;
+  // Simple page numbering
+  var base = 3 + (idxQ * 2);
+  if (mode === "note") base += 1;
 
-    safeText($("pageNumLeft"), "— " + left + " —");
-    safeText($("pageNumRight"), "— " + right + " —");
+  safeText($("pageNumLeft"), "— " + base + " —");
+  safeText($("pageNumRight"), "— " + (base + 1) + " —");
 
-    safeText($("chapterLine"), "CHAPTER II");
-    safeText($("chapterTitle"), (mode === "question") ? "A Gentle Examination" : "A Small Memory");
+  // Chapter titles
+  safeText($("chapterLine"), "CHAPTER II");
+
+  if (mode === "question") {
+    safeText($("chapterTitle"), "Bestie Interrogation");
+  } else {
+    safeText($("chapterTitle"), "A Small Memory");
   }
+}
+
 
   function render() {
     setProgress();
@@ -811,6 +819,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
