@@ -487,7 +487,7 @@
 
     if (card) {
       card.innerHTML =
-        '<h3 class="qTitle">Ek chhoti si yaad…</h3>' +
+        '<h3 class="qTitle">One of my favourite chapters</h3>' +
         '<p class="qPrompt">' + memory + '</p>' +
         '<p class="qPrompt" style="opacity:.78">' + tail + '</p>';
     }
@@ -851,6 +851,7 @@
 
   showPanel(intro);
 })();
+
 
 
 
