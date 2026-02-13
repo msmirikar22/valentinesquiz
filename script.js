@@ -788,10 +788,12 @@ var POEM_MEMORIES = [
 
       mode = "question";
 
-      if (q.id === "valentine_yes" && answers[q.id] !== "yes") {
+            if ((q.id === "valentine_yes" || q.id === "bestie_yes") && answers[q.id] !== "yes") {
+        mode = "question";
         render();
         return;
       }
+
 
       if (idxQ >= questions.length - 1) {
         finish();
@@ -819,6 +821,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
