@@ -2,7 +2,7 @@
   "use strict";
 
   // ===== Personalization =====
-  var GIRLFRIEND_NAME = "Madhura";
+  var GIRLFRIEND_NAME = "Rutuja";
   var heroTitle = document.getElementById("heroTitle");
   if (heroTitle) heroTitle.textContent = GIRLFRIEND_NAME + ".";
 
@@ -356,19 +356,25 @@
   function getInterlude(idx){ return POEM_MEMORIES[idx % POEM_MEMORIES.length]; }
 
   // Questions
-  var questions = [
-    {
-      id: "fell_date",
-      type: "gate_choice",
-      title: "A gentle timestamp…",
-      prompt:
-        "Some moments don’t arrive with fireworks.\nThey arrive quietly — and then they never leave.\n\n" +
-        "When do you believe the undersigned first fell for you?",
-      options: ["July 4, 2025","February 3, 2025","Some random day I don’t remember","It was inevitable 😌"],
-      correctIndex: 1,
-      noteOk: "Correct. The heart is annoyingly precise about you.",
-      noteNo: "Not quite — try again. (The right date is a little sacred.)"
-    },
+    var questions = [
+      {
+        id: "bestie_start",
+        type: "choice",
+        title: "A core memory check…",
+        prompt:
+          "Some friendships don’t start loudly.\n" +
+          "They just… stick.\n\n" +
+          "When do you think we officially became locked-in best friends?",
+        options: [
+          "The first real deep conversation",
+          "The day we trauma-bonded",
+          "It just happened naturally",
+          "We were inevitable 😌"
+        ],
+        noteForChoice: function (pick) {
+          return "Honestly? Valid. But either way — we’re locked in now.";
+    }
+  },
     {
       id: "trait",
       type: "choice_reveal",
@@ -859,3 +865,4 @@
 
   showPanel(intro);
 })();
+
