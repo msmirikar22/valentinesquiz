@@ -328,7 +328,7 @@
   function getInterlude(idx){ return POEM_MEMORIES[idx % POEM_MEMORIES.length]; }
 var POEM_MEMORIES = [
   "Us = comfort food + yapping + unhinged laughter.",
-  "Somehow we became permanent. No announcement. Just vibes.",
+  "Somehow we stayed. No labels. Just consistency.",
   "If best-friendhood had a soundtrack, it’d be us screaming the lyrics.",
   "Low effort? Never. We show up. That’s the whole thing.",
   "Future us will read this and immediately cringe (affectionate)."
@@ -450,7 +450,7 @@ var POEM_MEMORIES = [
     var memory = getInterlude(idxQ);
 
     // show flowers line ONLY once (first interlude)
-    var tail = "Turn the page… (and don’t judge me for being sentimental 😌)";
+    var tail = "Turn the page… whenever you're ready!!)";
 
 
     if (card) {
@@ -821,6 +821,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
