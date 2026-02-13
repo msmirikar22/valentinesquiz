@@ -326,82 +326,75 @@
   // Interludes (MSM Travels vibe)
   
   function getInterlude(idx){ return POEM_MEMORIES[idx % POEM_MEMORIES.length]; }
+var POEM_MEMORIES = [
+  "Us = comfort food + yapping + unhinged laughter.",
+  "Somehow we became permanent. No announcement. Just vibes.",
+  "If best-friendhood had a soundtrack, it’d be us screaming the lyrics.",
+  "Low effort? Never. We show up. That’s the whole thing.",
+  "Future us will read this and immediately cringe (affectionate)."
+];
 
   // Questions
-    var questions = [
-      {
-        id: "bestie_start",
-        type: "choice",
-        title: "A core memory check…",
-        prompt:
-          "Some friendships don’t start loudly.\n" +
-          "They just… stick.\n\n" +
-          "When do you think we officially became locked-in best friends?",
-        options: [
-          "The first real deep conversation",
-          "The day we trauma-bonded",
-          "It just happened naturally",
-          "We were inevitable 😌"
-        ],
-        noteForChoice: function (pick) {
-          return "Honestly? Valid. But either way — we’re locked in now.";
+ var questions = [
+  {
+    id: "bestie_start",
+    type: "choice",
+    title: "A core memory check…",
+    prompt:
+      "Some friendships don’t start loudly.\n" +
+      "They just… stick.\n\n" +
+      "When do you think we officially became locked-in best friends?",
+    options: [
+      "The first real deep conversation",
+      "The day we trauma-bonded",
+      "It just happened naturally",
+      "We were inevitable 😌"
+    ],
+    noteForChoice: function () {
+      return "Honestly? Valid. But either way — we’re locked in now.";
     }
   },
-    {
-  id: "trait",
-  type: "choice_reveal",
-  title: "A question with a trapdoor…",
-  prompt:
-    "Pick one — the thing I appreciate most about you.\n\n" +
-    ,
-  options: ["Your loyalty", "Your humor", "Your honesty", "Your tiny efforts"],
-  revealNote:
-    "All of them.\n\n" +
-    "Your loyalty — always showing up.\n" +
-    "Your humor — even when life is messy.\n" +
-    "Your honesty — the kind that feels safe.\n" +
-    "And your tiny efforts — the ones you think don’t matter — that matter the most.\n\n" +
-    "Basically… you’re a 10/10 best friend."
-},
 
-    {
-  id: "best_memory_note",
-  type: "text_simple",
-  title: "Write something for us…",
-  prompt:
-    "Write something memorable for us.\n" +
-    "A line. A joke. A promise. An inside reference.\n\n" +
-    "Something we’ll read again and smile at.",
-  placeholder: "This is going in the memory vault…"
-}
-,
-    {
-      id: "valentine_word",
-      type: "text",
-      title: "One word. One feeling.",
-      prompt: "When I say “Valentine”… what blooms in your mind?",
-      placeholder: "A word, a feeling, a sentence…",
-      noteOk: "That’s beautiful. I’m keeping it."
-    },
-    {
-      id: "gift",
-      type: "text",
-      title: "Your gift, in your words…",
-      prompt: "What do you want for your Valentine’s gift?",
-      placeholder: "Be honest. I’m taking notes.",
-    
-    },
-    {
-      id: "valentine_yes",
-      type: "loop_yesno",
-      title: "The question that starts the next chapter…",
-      prompt: "Will you be the undersigned’s Valentine?",
-      yesText: "Yes.",
-      noText: "No.",
-      noNote: "Accha? 😌\n\nNahi chalnar.\nTurn the page and try again — the correct answer is… obvious.",
-      yesNote: "Then it’s settled.\n\nFebruary 14 it is."
-    }
-  ];
+  {
+    id: "trait",
+    type: "choice_reveal",
+    title: "A question with a trapdoor…",
+    prompt:
+      "Pick one — the thing I appreciate most about you.\n\n" +
+      "Choose carefully… or don’t. I already know what I’ll write in the margin.",
+    options: ["Your loyalty", "Your humor", "Your honesty", "Your tiny efforts"],
+    revealNote:
+      "All of them.\n\n" +
+      "Your loyalty — always showing up.\n" +
+      "Your humor — even when life is messy.\n" +
+      "Your honesty — the kind that feels safe.\n" +
+      "And your tiny efforts — the ones you think don’t matter — that matter the most.\n\n" +
+      "Basically… you’re a 10/10 best friend."
+  },
+
+  {
+    id: "best_memory_note",
+    type: "text_simple",
+    title: "Write something for us…",
+    prompt:
+      "Write something memorable for us.\n" +
+      "A line. A joke. A promise. An inside reference.\n\n" +
+      "Something we’ll read again and smile at.",
+    placeholder: "This is going in the memory vault…"
+  },
+
+  {
+    id: "bestie_yes",
+    type: "loop_yesno",
+    title: "Final question 😤",
+    prompt: "Will you be my official valentine date?",
+    yesText: "Yes obviously.",
+    noText: "No???",
+    noNote: "Wrong answer 😌\n\nTry again. Bestie rights are mandatory.",
+    yesNote: "Okay done.\n\nWe’re locked in 🤝"
+  }
+];
+
 
   var idxQ = 0;
   var mode = "question";
@@ -715,11 +708,11 @@
 
     safeText($("finalTitle"), GIRLFRIEND_NAME + ", you’re my Valentine.");
     safeText($("finalBody"),
-      "Here’s to us.\n" +
-      "To the kindness you wear so well.\n" +
-      "To your calm — my favorite place.\n" +
-      "And to every chapter that comes next."
-    );
+  "Here’s to us.\n" +
+  "To the jokes, the vents, the wins.\n" +
+  "To the chaos (respectfully).\n" +
+  "And to whatever we do next — together."
+  );
 
     safeText($("outVibe"), vibe);
     safeText($("outBudget"), budget);
@@ -818,6 +811,7 @@
 
   showPanel(intro);
 })();
+
 
 
 
