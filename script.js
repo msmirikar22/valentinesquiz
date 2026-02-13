@@ -324,18 +324,7 @@
   }
 
   // Interludes (MSM Travels vibe)
-  var POEM_MEMORIES = [
-    "Here’s to us — the bond we never announced, but somehow built anyway.",
-    "I’m proud of you. Like genuinely proud. Every single day.",
-    "Learning your language, one word at a time… because loving you makes effort feel right.",
-    "Your calm is my favorite place. Soft, safe, and real.",
-    "From long talks as friends to something rare — suddenly clear. (Haan, you.)",
-    "Helping with applications, showing up, holding it together — you inspire me, baby.",
-    "Warm showers, warm laughs, warm us. Bas itna hi chahiye.",
-    "Batman, Pikachu, and us pulled in for the night… comfort level: maximum.",
-    "Cooking Marathi just for you… trying to get it right (hopefully I do).",
-    "Talking futures — careful, real… seeing what stays. Feeling what’s sealed."
-  ];
+  
   function getInterlude(idx){ return POEM_MEMORIES[idx % POEM_MEMORIES.length]; }
 
   // Questions
@@ -364,7 +353,7 @@
   title: "A question with a trapdoor…",
   prompt:
     "Pick one — the thing I appreciate most about you.\n\n" +
-    "Choose carefully… or don’t. I already know what I’ll write in the margin.",
+    ,
   options: ["Your loyalty", "Your humor", "Your honesty", "Your tiny efforts"],
   revealNote:
     "All of them.\n\n" +
@@ -376,13 +365,16 @@
 },
 
     {
-      id: "ideal_winter_date",
-      type: "text_simple",
-      title: "Paint me a winter scene…",
-      prompt:
-        "It’s cold outside.\nWe’re warm anyway.\n\nDescribe your ideal winter date — however you like.",
-      placeholder: "Write anything…"
-    },
+  id: "best_memory_note",
+  type: "text_simple",
+  title: "Write something for us…",
+  prompt:
+    "Write something memorable for us.\n" +
+    "A line. A joke. A promise. An inside reference.\n\n" +
+    "Something we’ll read again and smile at.",
+  placeholder: "This is going in the memory vault…"
+}
+,
     {
       id: "valentine_word",
       type: "text",
@@ -392,37 +384,12 @@
       noteOk: "That’s beautiful. I’m keeping it."
     },
     {
-      id: "budget",
-      type: "number",
-      title: "A practical bookmark…",
-      prompt: "Numbers only.\nWhat should the budget be for our Valentine’s Day expedition?",
-      placeholder: "Example: 120",
-      noteOk: "Understood. The undersigned will spend it wisely."
-    },
-    {
-      id: "vibe",
-      type: "choice",
-      title: "Choose the mood of the chapter…",
-      prompt: "What vibe do you want for our date?",
-      options: ["Soft & romantic","Elegant & cozy","Playful & spontaneous","Intimate & warm"],
-      noteForChoice: function (pick) { return "Done. " + pick + " it is. Main sambhaal lunga 🙂"; }
-    },
-    {
       id: "gift",
       type: "text",
       title: "Your gift, in your words…",
       prompt: "What do you want for your Valentine’s gift?",
       placeholder: "Be honest. I’m taking notes.",
-      noteOk: "Noted. Consider this a very serious hint."
-    },
-    {
-      id: "us_words",
-      type: "text",
-      title: "Write in the margins…",
-      prompt:
-        "Write anything you want here.\nA thought. A memory. A line for us.\n\nNo rules.",
-      placeholder: "I’m listening…",
-      noteOk: "Thank you. This one matters."
+    
     },
     {
       id: "valentine_yes",
@@ -431,8 +398,8 @@
       prompt: "Will you be the undersigned’s Valentine?",
       yesText: "Yes.",
       noText: "No.",
-      noNote: "Accha? 😌\n\nNahi chalega.\nTurn the page and try again — the correct answer is… obvious.",
-      yesNote: "Then it’s settled.\n\nFebruary 14 is ours."
+      noNote: "Accha? 😌\n\nNahi chalnar.\nTurn the page and try again — the correct answer is… obvious.",
+      yesNote: "Then it’s settled.\n\nFebruary 14 it is."
     }
   ];
 
@@ -851,6 +818,7 @@
 
   showPanel(intro);
 })();
+
 
 
 
