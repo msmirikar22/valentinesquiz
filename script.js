@@ -263,29 +263,12 @@
   loadSignature();
 
   // ===== Carousel =====
-  var photoImg = $("photoImg"), photoCaption = $("photoCaption"), photoPrev = $("photoPrev"), photoNext = $("photoNext"), photoDots = $("photoDots");
+  var photoImg = $("photoImg"), photoPrev = $("photoPrev"), photoNext = $("photoNext"), photoDots = $("photoDots");
 
   var PHOTOS = [];
   for (var i = 1; i <= 15; i++) PHOTOS.push({ src: "photos/" + i + ".jpg", caption: "—" });
 
-  var CAPTIONS = [
-    "I’ll always come back to this day. It felt special — like love, but quietly sure.",
-    "Whenever I can, I’m yours: travel partner, room partner, drop-off partner — all of it.",
-    "My birthday was great… but my happiest minutes were the ones with you in them.",
-    "OH MY GOD. How am I not supposed to fall for you?",
-    "This is comfort. This is real. This is you — and I’m grateful.",
-    "Fourth of July… couldn’t have been better. Thank you for coming with me (and making it ours).",
-    "Diwali, my best one. This photo is calm… but my feelings aren’t. I love you.",
-    "Blurry selfie, clear truth: your smile makes everything look better.",
-    "Travel the world together? Haan. Always.",
-    "Can’t wait to graduate with you and take all the pictures you want… so I took the first one 🙂",
-    "Okay fine. I get it — you’re *ridiculously* hot. I’ll try to keep up.",
-    "With you, even grocery runs feel like a date, baby.",
-    "Comfort. Bas comfort. (And you.)",
-    "More sun-kissed pictures like this… even when you’re 80? Deal?",
-    "If Chicago was the beginning, I swear I’ll take you everywhere you want to be."
-  ];
-  PHOTOS.forEach(function(p, idx){ p.caption = CAPTIONS[idx] || "—"; });
+ 
   PHOTOS.forEach(function(p){ var im = new Image(); im.src = p.src; });
 
   var photoIndex = 0, autoTimer = null;
@@ -319,7 +302,7 @@
     photoImg.style.opacity = "0";
     setTimeout(function () {
       photoImg.src = PHOTOS[photoIndex].src;
-      safeText(photoCaption, PHOTOS[photoIndex].caption || "—");
+      
       photoImg.style.opacity = "1";
       setActiveDot();
     }, 140);
@@ -868,5 +851,6 @@
 
   showPanel(intro);
 })();
+
 
 
