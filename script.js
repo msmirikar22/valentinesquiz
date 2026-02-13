@@ -376,16 +376,22 @@
     }
   },
     {
-      id: "trait",
-      type: "choice_reveal",
-      title: "A question with a trapdoor…",
-      prompt:
-        "Pick one — the trait the undersigned loves most about you.\n\n" +
-        "Choose carefully… or don’t. I already know what I’ll write in the margin.",
-      options: ["Your honesty","Your eyes","Your smile","Your tiny efforts"],
-      revealNote:
-        "All of them.\n\nYour honesty that feels safe.\nYour eyes that soften the world.\nYour smile that turns a bad day gentle.\nAnd your tiny efforts — the ones you think don’t matter — that matter the most.\n\nIt’s always been all of you."
-    },
+  id: "trait",
+  type: "choice_reveal",
+  title: "A question with a trapdoor…",
+  prompt:
+    "Pick one — the thing I appreciate most about you.\n\n" +
+    "Choose carefully… or don’t. I already know what I’ll write in the margin.",
+  options: ["Your loyalty", "Your humor", "Your honesty", "Your tiny efforts"],
+  revealNote:
+    "All of them.\n\n" +
+    "Your loyalty — always showing up.\n" +
+    "Your humor — even when life is messy.\n" +
+    "Your honesty — the kind that feels safe.\n" +
+    "And your tiny efforts — the ones you think don’t matter — that matter the most.\n\n" +
+    "Basically… you’re a 10/10 best friend."
+},
+
     {
       id: "ideal_winter_date",
       type: "text_simple",
@@ -493,11 +499,8 @@
     var memory = getInterlude(idxQ);
 
     // show flowers line ONLY once (first interlude)
-    var tail = "Turn the page…";
-    if (!flowersShownOnce) {
-      tail = "Turn the page… and yes — I’m still bringing you flowers.";
-      flowersShownOnce = true;
-    }
+    var tail = "Turn the page… (and don’t judge me for being sentimental 😌)";
+
 
     if (card) {
       card.innerHTML =
@@ -865,4 +868,5 @@
 
   showPanel(intro);
 })();
+
 
