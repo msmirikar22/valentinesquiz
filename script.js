@@ -415,7 +415,7 @@ var POEM_MEMORIES = [
   safeText($("pageNumRight"), "— " + (base + 1) + " —");
 
   // Chapter titles
-  safeText($("chapterLine"), "CHAPTER II");
+  safeText($("chapterLine"), "II");
 
   if (mode === "question") {
     safeText($("chapterTitle"), "Bestie Interrogation");
@@ -821,6 +821,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
