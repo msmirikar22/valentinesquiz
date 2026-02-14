@@ -266,7 +266,7 @@
   var photoImg = $("photoImg"), photoPrev = $("photoPrev"), photoNext = $("photoNext"), photoDots = $("photoDots");
 
   var PHOTOS = [];
-  for (var i = 1; i <= 15; i++) PHOTOS.push({ src: "photos/" + i + ".jpg", caption: "—" });
+  for (var i = 1; i <= 8; i++) PHOTOS.push({ src: "photos/" + i + ".jpg", caption: "—" });
 
  
   PHOTOS.forEach(function(p){ var im = new Image(); im.src = p.src; });
@@ -821,6 +821,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
