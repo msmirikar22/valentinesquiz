@@ -747,7 +747,7 @@ var POEM_MEMORIES = [
 
       copyBtn.addEventListener("click", function(){
         var txt = buildAnswerSummary();
-        copyText(txt).then(function(){ alert("Copied. Send it to Arnaav 🙂"); });
+        copyText(txt).then(function(){ alert("Copied. Send it to Madhura🙂"); });
       });
 
       dlBtn.addEventListener("click", function(){
@@ -818,6 +818,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
