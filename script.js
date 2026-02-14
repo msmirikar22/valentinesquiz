@@ -732,34 +732,6 @@ var POEM_MEMORIES = [
     loadSignature();
     showPanel(final);
 
-    var leftPage = final.querySelector(".page.left .pageBody");
-    if (leftPage && !document.getElementById("exportRow")) {
-      var row = document.createElement("div");
-      row.className = "exportRow";
-      row.id = "exportRow";
-
-    
-
-      var dlBtn = document.createElement("button");
-      dlBtn.type = "button";
-      dlBtn.className = "primary";
-      dlBtn.textContent = "Download Answers";
-
-      copyBtn.addEventListener("click", function(){
-        var txt = buildAnswerSummary();
-        copyText(txt).then(function(){ alert("Copied. Send it to Madhura🙂"); });
-      });
-
-      dlBtn.addEventListener("click", function(){
-        var txt = buildAnswerSummary();
-        downloadText("valentine-answers.txt", txt);
-      });
-
-      
-      row.appendChild(dlBtn);
-      leftPage.appendChild(row);
-    }
-
     if (sigInput) setTimeout(function(){ sigInput.focus(); }, 250);
   }
 
@@ -818,6 +790,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
