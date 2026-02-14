@@ -738,10 +738,7 @@ var POEM_MEMORIES = [
       row.className = "exportRow";
       row.id = "exportRow";
 
-      var copyBtn = document.createElement("button");
-      copyBtn.type = "button";
-      copyBtn.className = "ghost";
-      copyBtn.textContent = "Copy Answers";
+    
 
       var dlBtn = document.createElement("button");
       dlBtn.type = "button";
@@ -758,7 +755,7 @@ var POEM_MEMORIES = [
         downloadText("valentine-answers.txt", txt);
       });
 
-      row.appendChild(copyBtn);
+      
       row.appendChild(dlBtn);
       leftPage.appendChild(row);
     }
@@ -821,6 +818,7 @@ var POEM_MEMORIES = [
 
   showPanel(intro);
 })();
+
 
 
 
